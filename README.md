@@ -55,6 +55,13 @@ pip install "faster-whisper>=1.2,<1.3" "zhconv>=1.4"
 3. 打开 AstrBot WebUI → 插件 → **重载插件**。
 4. 进入插件详情 → 打开 **赛博日常控制台** 视图。
 
+> 需要 AstrBot **4.24.2 或更新**。插件视图（Plugin Views / Plugin Pages）是
+> AstrBot 4.24.2 才引入的能力，更早的版本里插件详情页根本没有这个入口。
+>
+> 页面同时放在 `views/` 和 `pages/` 两份目录：AstrBot 4.29+ 优先读 `views/`，
+> 4.24.2–4.28 只认 `pages/`。两份内容必须完全一致，改完 `views/` 后跑一次
+> `python scripts/sync_views.py` 即可，`--check` 只校验不写入。
+
 > 浏览器使用本机已安装的 Edge（默认 `msedge`）或 Chrome。若启动失败，在设置页把「浏览器通道」改成 `chrome`，或填写 `browser_executable` 的完整路径。
 >
 > 首次使用小黑盒 / 贴吧扫码时，如果无头浏览器截不到二维码，把「浏览器无头模式」关掉再试。
